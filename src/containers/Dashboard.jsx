@@ -1,18 +1,17 @@
-import React, { useEffect /* , useState */ } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-// import { getAllPosts } from "../apis/postApi";
-import PostCard from "../components/PostCard";
-import { resetPosts } from "../redux/actions/dashboardAction/actions";
-import { DASHBOARD_CONSTANTS } from "../redux/actions/dashboardAction/actionTypes";
+import { Container, Row, Col } from "reactstrap";
+import PostCard from "components/PostCard";
+import { resetPosts } from "redux/actions/dashboardAction/actions";
+import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
 
 function Dashboard(props) {
-  // const [posts, setPosts] = useState([]);
   const history = useHistory();
   const state = useSelector((state) => state.dashboard);
   const dispatch = useDispatch();
 
-  const { postData: posts } = state;
+  const { postData: posts, loading } = state;
 
   useEffect(() => {
     dispatch({ type: DASHBOARD_CONSTANTS.FETCH_POSTS });
@@ -26,17 +25,25 @@ function Dashboard(props) {
     history.push(`/dashboard/details/${id}`);
   };
 
+  if (loading) return <span>LOADING...</span>;
+
   return (
-    <div className="d-flex flex-column align-items-center">
-      <h4>Posts</h4>
-      <div className="w-75">
-        {posts.map((post) => (
-          <PostCard
-            key={post.id}
-            post={post}
-            handleClick={() => handleClick(post.id)}
-          />
-        ))}
+    <div>
+      <h4 className="text-center mt-2">Posts</h4>
+      <div className="">
+        <Container>
+          <Row xs="1" sm="2" md="3">
+            {posts.map((post) => (
+              <Col>
+                <PostCard
+                  key={post.id}
+                  post={post}
+                  handleClick={() => handleClick(post.id)}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </div>
     </div>
   );

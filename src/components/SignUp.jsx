@@ -3,13 +3,24 @@ import { Link } from "react-router-dom";
 import { Alert, Button, Col, Container, Form, Row } from "reactstrap";
 import FormInput from "./FormInput";
 
-function SignUp({ handleChange, errors, handleSubmit, submitError }) {
+function SignUp({
+  handleChange,
+  errors,
+  handleSubmit,
+  submitError,
+  submitSuccess,
+}) {
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
       <Row xs="1" className="justify-content-center">
         <Col xs="8">
           <Alert hidden={submitError === ""} color="danger">
             {submitError}
+          </Alert>
+        </Col>
+        <Col xs="8">
+          <Alert hidden={submitSuccess === ""} color="success">
+            {submitSuccess}
           </Alert>
         </Col>
         <Col xs="8">

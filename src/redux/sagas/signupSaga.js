@@ -10,7 +10,12 @@ function* makeSignupRequest(action) {
   const { formData } = action.payload;
   try {
     const response = yield call(doSignup, formData);
-    yield put(signupSuccess({ uuid: response.data.uuid }));
+    yield put(
+      signupSuccess({
+        success: "User registration successful!",
+        uuid: response.data.uuid,
+      })
+    );
   } catch (e) {
     const { response } = e;
     yield put(signupFailure({ error: response.data._error_message }));

@@ -8,7 +8,9 @@ import {
 
 function UserDetailsContainer() {
   const dispatch = useDispatch();
-  const { userDetails: user } = useSelector((state) => state.userDetails);
+  const { userDetails: user, loading } = useSelector(
+    (state) => state.userDetails
+  );
   useEffect(() => {
     // dispatch fetchUserDetails action with payload id
     dispatch(fetchUserDetails());
@@ -18,7 +20,8 @@ function UserDetailsContainer() {
     };
   }, [dispatch]);
 
-  // const user = JSON.parse(localStorage.getItem("user"));
+  if (loading) return <span>LOADING...</span>;
+
   return <UserDetails user={user} />;
 }
 

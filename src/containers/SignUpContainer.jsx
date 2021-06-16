@@ -29,7 +29,9 @@ const schema = yup.object().shape({
 function SignUpContainer() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { error: submitError } = useSelector((state) => state.signup);
+  const { success: submitSuccess, error: submitError } = useSelector(
+    (state) => state.signup
+  );
   const reduxDispatch = useDispatch();
 
   const { fullname, email, username, password, type, acceptTerms, errors } =
@@ -81,6 +83,7 @@ function SignUpContainer() {
       handleSubmit={handleSubmit}
       errors={errors}
       submitError={submitError}
+      submitSuccess={submitSuccess}
     />
   );
 }

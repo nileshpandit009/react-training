@@ -18,21 +18,20 @@ function UserDetails({ user }) {
     <div className="p-3">
       <Card>
         <CardHeader>
-          <CardTitle tag="h4">{capitalize(user?.full_name_display)}</CardTitle>
+          <CardTitle tag="h4">{capitalize(user.full_name_display)}</CardTitle>
         </CardHeader>
         <CardBody>
           <CardText>
-            <b>ID:</b> <span>{user?.id}</span>
+            <b>ID:</b> <span>{user.id}</span>
           </CardText>
           <CardText>
-            <b>Username:</b> <span>{user?.username}</span>
+            <b>Username:</b> <span>{user.username}</span>
           </CardText>
           <CardText>
-            <b>Email:</b> <span>{user?.email}</span>
+            <b>Email:</b> <span>{user.email}</span>
           </CardText>
           <CardText>
-            <b>Status:</b>{" "}
-            <span>{user?.is_active ? "Active" : "Inactive"}</span>
+            <b>Status:</b> <span>{user.is_active ? "Active" : "Inactive"}</span>
           </CardText>
         </CardBody>
       </Card>
