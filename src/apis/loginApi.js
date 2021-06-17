@@ -1,7 +1,7 @@
-import { axiosClient } from "./apiHelper";
+import { post } from "apis/taigaHelper";
 
 export const doLogin = (email, password) => {
-  return axiosClient("/auth", "POST", {
+  return post("/auth", {
     username: email,
     password,
     type: "normal",

@@ -1,9 +1,9 @@
-import axios from "axios";
+import { get } from "./typicodeHelper";
 
 export const getAllPosts = () => {
-  return axios.get("https://jsonplaceholder.typicode.com/posts");
+  return get("posts");
 };
 
 export const getPostById = (id) => {
-  return axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  return get(`posts/${id}`);
 };

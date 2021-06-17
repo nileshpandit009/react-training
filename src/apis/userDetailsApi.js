@@ -1,5 +1,5 @@
-import { axiosClient, getAuthHeader } from "./apiHelper";
+import { get } from "apis/taigaHelper";
 
 export const getUserDetails = () => {
-  return axiosClient("/users/me", "GET", {}, getAuthHeader());
+  return get("/users/me");
 };

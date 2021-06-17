@@ -1,8 +1,8 @@
-const { axiosClient } = require("./apiHelper");
+import { post } from "apis/taigaHelper";
 
 export const doSignup = (payload) => {
   const { email, fullname, username, password, acceptTerms, type } = payload;
-  return axiosClient("/auth/register", "POST", {
+  return post("/auth/register", {
     email: email,
     full_name: fullname,
     username: username,
