@@ -1,5 +1,4 @@
 import { call, put, takeEvery } from "@redux-saga/core/effects";
-// import { getAllPosts, getPostById } from "../../apis/postApi";
 import { getAllPosts, getPostById } from "apis/postApi";
 import {
   fetchPostDetailsError,
@@ -7,28 +6,30 @@ import {
   fetchPostsError,
   fetchPostsSuccess,
 } from "redux/actions/dashboardAction/actions";
-import { DASHBOARD_CONSTANTS } from "../actions/dashboardAction/actionTypes";
+import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
 
 // Worker saga will be fired on FETCH_POSTS actions
 function* fetchPosts(action) {
   try {
     const dashboardData = yield call(getAllPosts);
-    yield put(fetchPostsSuccess, { posts: dashboardData.data });
+    yield put(fetchPostsSuccess({ posts: dashboardData.data }));
   } catch (e) {
     const { response } = e;
-    yield put(fetchPostsError, { error: response.data });
+    yield put(fetchPostsError({ error: response.data }));
   }
 }
 
 function* fetchPostDetails(action) {
   try {
     const postDetailsResponse = yield call(getPostById, action.payload.id);
-    yield put(fetchPostDetailsSuccess, {
-      postDetails: postDetailsResponse.data,
-    });
+    yield put(
+      fetchPostDetailsSuccess({
+        postDetails: postDetailsResponse.data,
+      })
+    );
   } catch (e) {
     const { response } = e;
-    yield put(fetchPostDetailsError, { error: response.data });
+    yield put(fetchPostDetailsError({ error: response.data }));
   }
 }
 
