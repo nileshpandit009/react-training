@@ -7,6 +7,7 @@ import {
   Label,
   Input,
   FormFeedback,
+  Alert,
 } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
 
@@ -21,13 +22,14 @@ function Login({
   loginErr,
 }) {
   return (
-    <Container
-      fluid="lg"
-      className="d-flex justify-content-center align-items-center vh-100"
-    >
+    <Container className="d-flex justify-content-center align-items-center vh-100 ">
       <Row xs="1" className="justify-content-center">
-        <Col xs="8">
-          <span>{loginErr}</span>
+        <Col xs="12">
+          <div className="p-2">
+            <Alert hidden={loginErr === ""} color="danger">
+              {loginErr}
+            </Alert>
+          </div>
           <Form onSubmit={handleSubmit} className="p-2">
             <FormGroup className="pb-2">
               <Label for="exampleEmail">Email</Label>
@@ -59,11 +61,11 @@ function Login({
               Login
             </Button>
           </Form>
-        </Col>
-        <Col xs="8">
-          <span className="p-2">
-            Don't have an account? <Link to="/signup">Sign up.</Link>
-          </span>
+          <div>
+            <span className="p-2">
+              Don't have an account? <Link to="/signup">Sign up.</Link>
+            </span>
+          </div>
         </Col>
       </Row>
     </Container>

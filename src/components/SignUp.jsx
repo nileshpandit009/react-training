@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Alert, Button, Col, Container, Form, Row } from "reactstrap";
+import { Alert, Button, Col, Container, Form, Row, Spinner } from "reactstrap";
 import FormInput from "./FormInput";
 
 function SignUp({
@@ -9,6 +9,7 @@ function SignUp({
   handleSubmit,
   submitError,
   submitSuccess,
+  loading,
 }) {
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
@@ -92,8 +93,16 @@ function SignUp({
               invalid={errors.acceptTerms !== ""}
               errorMessage={errors.acceptTerms}
             />
-            <Button type="submit" color="primary" className="mt-2">
-              Sign Up
+            <Button
+              disabled={loading}
+              type="submit"
+              color="primary"
+              className="mt-2"
+            >
+              Sign Up{" "}
+              <Spinner hidden={!loading} color="light" size="sm">
+                {""}
+              </Spinner>
             </Button>
           </Form>
         </Col>

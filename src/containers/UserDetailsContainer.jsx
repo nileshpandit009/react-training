@@ -1,3 +1,4 @@
+import LoadingIndicator from "components/LoadingIndicator";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import UserDetails from "../components/UserDetails";
@@ -20,7 +21,7 @@ function UserDetailsContainer() {
     };
   }, [dispatch]);
 
-  if (loading) return <span>LOADING...</span>;
+  if (loading) return <LoadingIndicator />;
 
   return <UserDetails user={user} />;
 }

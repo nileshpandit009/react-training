@@ -11,6 +11,7 @@ import {
   resetLoginState,
   makeLoginRequest,
 } from "../redux/actions/loginAction/actions";
+import LoadingIndicator from "components/LoadingIndicator";
 
 const LoginContainer = () => {
   // Redux
@@ -24,7 +25,8 @@ const LoginContainer = () => {
     };
   }, [dispatch]);
 
-  const { email, password, emailErr, passwordErr, loginErr } = loginState;
+  const { email, password, emailErr, passwordErr, loginErr, loading } =
+    loginState;
 
   let schema = yup.object().shape({
     email: yup.string().required(),
@@ -69,6 +71,10 @@ const LoginContainer = () => {
 
   if (localStorage.getItem("user")) {
     return <Redirect to="/dashboard" />;
+  }
+
+  if (loading) {
+    return <LoadingIndicator />;
   }
 
   return (

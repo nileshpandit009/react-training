@@ -5,6 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import PostCard from "components/PostCard";
 import { resetPosts } from "redux/actions/dashboardAction/actions";
 import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
+import LoadingIndicator from "components/LoadingIndicator";
 
 function Dashboard(props) {
   const history = useHistory();
@@ -25,7 +26,7 @@ function Dashboard(props) {
     history.push(`/dashboard/details/${id}`);
   };
 
-  if (loading) return <span>LOADING...</span>;
+  if (loading) return <LoadingIndicator />;
 
   return (
     <div>
@@ -34,9 +35,8 @@ function Dashboard(props) {
         <Container>
           <Row xs="1" sm="2" md="3">
             {posts.map((post) => (
-              <Col>
+              <Col key={post.id}>
                 <PostCard
-                  key={post.id}
                   post={post}
                   handleClick={() => handleClick(post.id)}
                 />

@@ -5,6 +5,7 @@ import GoBackLink from "components/GoBackLink";
 import PostCard from "components/PostCard";
 import { resetPostDetails } from "redux/actions/dashboardAction/actions";
 import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
+import LoadingIndicator from "components/LoadingIndicator";
 
 function DetailsContainer() {
   const params = useParams();
@@ -25,7 +26,7 @@ function DetailsContainer() {
     };
   }, [dispatch]);
 
-  if (loading) return <span>LOADING...</span>;
+  if (loading) return <LoadingIndicator />;
 
   return (
     <div className="d-flex flex-column align-items-center">

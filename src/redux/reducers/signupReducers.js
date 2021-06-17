@@ -4,7 +4,7 @@ const { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } = SIGNUP_CONSTANTS;
 
 const initialState = {
   uuid: "",
-  loading: true,
+  loading: false,
   success: "",
   error: "",
 };

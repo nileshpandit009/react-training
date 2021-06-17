@@ -19,7 +19,7 @@ const initialState = {
   passwordErr: "",
   loginErr: "",
   authToken: "",
-  loading: true,
+  loading: false,
 };
 
 const loginReducer = (state = initialState, action) => {
