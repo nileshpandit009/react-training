@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
-import GoBackLink from "../components/GoBackLink";
+import GoBackLink from "components/GoBackLink";
 
 function TermsConditions(props) {
   return (

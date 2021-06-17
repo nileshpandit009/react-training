@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
 import * as yup from "yup";
-import SignUp from "../components/SignUp";
-import reducer, { initialState } from "../reducers/signUpReducer";
-import dispatchWrapper from "../reducers/DispatchWrapper";
+import SignUp from "components/SignUp";
+import reducer, { initialState } from "reducers/signUpReducer";
+import dispatchWrapper from "reducers/DispatchWrapper";
 import { useDispatch, useSelector } from "react-redux";
 import { signupRequest } from "redux/actions/signupAction/actions";
 

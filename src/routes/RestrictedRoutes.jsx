@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, useRouteMatch } from "react-router-dom";
-import NavbarComponent from "../components/NavbarComponent";
-import Dashboard from "../containers/Dashboard";
-import DetailsContainer from "../containers/DetailsContainer";
-import UserDetailsContainer from "../containers/UserDetailsContainer";
+import NavbarComponent from "components/NavbarComponent";
+import Dashboard from "containers/Dashboard";
+import DetailsContainer from "containers/DetailsContainer";
+import UserDetailsContainer from "containers/UserDetailsContainer";
 import PrivateRoute from "./PrivateRoute";
 
 function RestrictedRoutes() {

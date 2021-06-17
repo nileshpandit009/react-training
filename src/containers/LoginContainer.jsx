@@ -10,7 +10,7 @@ import {
   changePasswordErr,
   resetLoginState,
   makeLoginRequest,
-} from "../redux/actions/loginAction/actions";
+} from "redux/actions/loginAction/actions";
 import LoadingIndicator from "components/LoadingIndicator";
 
 const LoginContainer = () => {

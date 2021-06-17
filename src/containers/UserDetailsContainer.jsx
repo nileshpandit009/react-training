@@ -1,11 +1,11 @@
 import LoadingIndicator from "components/LoadingIndicator";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import UserDetails from "../components/UserDetails";
+import UserDetails from "components/UserDetails";
 import {
   fetchUserDetails,
   resetUserDetails,
-} from "../redux/actions/userDetailsAction/actions";
+} from "redux/actions/userDetailsAction/actions";
 
 function UserDetailsContainer() {
   const dispatch = useDispatch();

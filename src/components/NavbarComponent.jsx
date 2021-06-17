@@ -11,7 +11,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
-import { resetLoginState } from "../redux/actions/loginAction/actions";
+import { resetLoginState } from "redux/actions/loginAction/actions";
 
 function NavbarComponent() {
   const history = useHistory();

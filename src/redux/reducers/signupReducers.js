@@ -1,4 +1,4 @@
-const { SIGNUP_CONSTANTS } = require("redux/actions/signupAction/actionTypes");
+import { SIGNUP_CONSTANTS } from "../actions/signupAction/actionTypes";
 
 const { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } = SIGNUP_CONSTANTS;
 

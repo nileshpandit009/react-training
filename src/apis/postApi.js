@@ -1,4 +1,4 @@
-import { get } from "./typicodeHelper";
+import { get } from "apis/typicodeHelper";
 
 export const getAllPosts = () => {
   return get("posts");
