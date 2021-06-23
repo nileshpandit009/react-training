@@ -30,7 +30,7 @@ function Login({
               {loginErr}
             </Alert>
           </div>
-          <Form onSubmit={handleSubmit} className="p-2">
+          <Form /* onSubmit={handleSubmit} */ className="p-2">
             <FormGroup className="pb-2">
               <Label for="exampleEmail">Email</Label>
               <Input
@@ -57,7 +57,12 @@ function Login({
               />
               <FormFeedback>{passwordErr}</FormFeedback>
             </FormGroup>
-            <Button data-testid="login-button" type="submit" color="primary">
+            <Button
+              data-testid="login-button"
+              type="button"
+              onClick={handleSubmit}
+              color="primary"
+            >
               Login
             </Button>
           </Form>
