@@ -7,7 +7,7 @@ const {
   RESET_USER_DETAILS,
 } = USER_DETAILS_CONSTANTS;
 
-const initialState = {
+export const initialState = {
   userDetails: null,
   loading: true,
   error: "",

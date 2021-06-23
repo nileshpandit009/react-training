@@ -6,7 +6,7 @@ import {
 } from "redux/actions/signupAction/actions";
 import { SIGNUP_CONSTANTS } from "redux/actions/signupAction/actionTypes";
 
-function* makeSignupRequest(action) {
+export function* makeSignupRequest(action) {
   const { formData } = action.payload;
   try {
     const response = yield call(doSignup, formData);

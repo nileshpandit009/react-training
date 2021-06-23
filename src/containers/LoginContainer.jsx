@@ -65,6 +65,7 @@ const LoginContainer = () => {
   };
 
   const handleSubmit = (event) => {
+    console.log("Submit is called here");
     event.preventDefault();
     validateInputs();
   };

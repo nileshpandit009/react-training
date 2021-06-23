@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import PostCard from "components/PostCard";
-import { resetPosts } from "redux/actions/dashboardAction/actions";
-import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
+import { fetchPosts, resetPosts } from "redux/actions/dashboardAction/actions";
 import LoadingIndicator from "components/LoadingIndicator";
 
 function Dashboard(props) {
@@ -15,7 +14,7 @@ function Dashboard(props) {
   const { postData: posts, loading } = state;
 
   useEffect(() => {
-    dispatch({ type: DASHBOARD_CONSTANTS.FETCH_POSTS });
+    dispatch(fetchPosts());
 
     return () => {
       dispatch(resetPosts());

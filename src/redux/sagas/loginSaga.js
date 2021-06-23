@@ -3,7 +3,7 @@ import { doLogin } from "apis/loginApi";
 import { loginFailure, loginSuccess } from "../actions/loginAction/actions";
 import { LOGIN_CONSTANTS } from "../actions/loginAction/actionTypes";
 
-function* makeLoginRequest(action) {
+export function* makeLoginRequest(action) {
   const { email, password } = action.payload;
   try {
     const userData = yield call(doLogin, email, password);

@@ -9,7 +9,7 @@ import {
 import { DASHBOARD_CONSTANTS } from "redux/actions/dashboardAction/actionTypes";
 
 // Worker saga will be fired on FETCH_POSTS actions
-function* fetchPosts(action) {
+export function* fetchPosts(action) {
   try {
     const dashboardData = yield call(getAllPosts);
     yield put(fetchPostsSuccess({ posts: dashboardData.data }));
@@ -19,7 +19,7 @@ function* fetchPosts(action) {
   }
 }
 
-function* fetchPostDetails(action) {
+export function* fetchPostDetails(action) {
   try {
     const postDetailsResponse = yield call(getPostById, action.payload.id);
     yield put(

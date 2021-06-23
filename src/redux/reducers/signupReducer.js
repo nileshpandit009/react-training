@@ -2,14 +2,14 @@ import { SIGNUP_CONSTANTS } from "../actions/signupAction/actionTypes";
 
 const { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } = SIGNUP_CONSTANTS;
 
-const initialState = {
+export const initialState = {
   uuid: "",
   loading: false,
   success: "",
   error: "",
 };
 
-export const signupReducer = (state = initialState, action) => {
+const signupReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -31,3 +31,5 @@ export const signupReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default signupReducer;

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import dashboardReducer from "./dashboardReducer";
 import loginReducer from "./loginReducer";
-import { signupReducer } from "./signupReducers";
+import signupReducer from "./signupReducer";
 import userDetailsReducer from "./userDetailsReducer";
 
 export const rootReducer = combineReducers({

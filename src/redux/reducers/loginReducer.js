@@ -12,7 +12,7 @@ const {
   LOGIN_FAILURE,
 } = LOGIN_CONSTANTS;
 
-const initialState = {
+export const initialState = {
   email: "",
   password: "",
   emailErr: "",

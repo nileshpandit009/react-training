@@ -57,7 +57,7 @@ function Login({
               />
               <FormFeedback>{passwordErr}</FormFeedback>
             </FormGroup>
-            <Button type="submit" color="primary">
+            <Button data-testid="login-button" type="submit" color="primary">
               Login
             </Button>
           </Form>

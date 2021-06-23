@@ -13,7 +13,7 @@ const {
   FETCH_POST_DETAILS_ERROR,
 } = DASHBOARD_CONSTANTS;
 
-const dashboardInitialState = {
+export const dashboardInitialState = {
   postData: [],
   postDetails: {},
   loading: true,

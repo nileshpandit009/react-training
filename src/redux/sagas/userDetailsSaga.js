@@ -6,7 +6,7 @@ import {
 } from "../actions/userDetailsAction/actions";
 import { USER_DETAILS_CONSTANTS } from "../actions/userDetailsAction/actionTypes";
 
-function* userDetailsRequest(action) {
+export function* userDetailsRequest(action) {
   try {
     const response = yield call(getUserDetails);
     yield put(userDetailsSuccess({ userDetails: response.data }));
