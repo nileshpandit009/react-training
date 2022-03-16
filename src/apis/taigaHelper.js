@@ -25,6 +25,6 @@ export const getAuthHeader = () => {
     const user = JSON.parse(loggedUser);
     return { Authorization: `Bearer ${user.auth_token}` };
   }
-  console.log("master branch");
+  console.log("master branch - update branch");
   return {};
 };
