@@ -14,7 +14,6 @@ import {
 import LoadingIndicator from "components/LoadingIndicator";
 
 const LoginContainer = () => {
-  // Redux
   const loginState = useSelector((state) => state.login);
 
   const dispatch = useDispatch();
